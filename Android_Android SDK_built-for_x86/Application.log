@@ -1,0 +1,7 @@
+[Android_Android SDK_built-for_x86 INFO ] 2022-08-14 23:39:50.629 DriverManager:29 - initializing Appium driver
+[Android_Android SDK_built-for_x86 INFO ] 2022-08-14 23:39:50.671 PropertyManager:17 - loading config properties
+[Android_Android SDK_built-for_x86 INFO ] 2022-08-14 23:39:50.672 CapabilitiesManager:18 - getting capabilities
+[Android_Android SDK_built-for_x86 INFO ] 2022-08-14 23:39:50.679 CapabilitiesManager:35 - appUrl isC:\Users\ram.pudi\appium-cucumberbdd-master\src\test\resources\apps\app-release.apk
+[Android_Android SDK_built-for_x86 INFO ] 2022-08-14 23:39:58.599 DriverManager:41 - Driver is initialized
+[Android_Android SDK_built-for_x86 INFO ] 2022-08-14 23:40:07.799 BasePage:75 - login with ram.pudi@eocharging.com
+[Android_Android SDK_built-for_x86 INFO ] 2022-08-14 23:40:15.255 BasePage:75 - password is Password1!

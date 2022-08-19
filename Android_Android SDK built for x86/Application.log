@@ -1,0 +1,4 @@
+[Android_Android SDK built for x86 INFO ] 2022-08-17 10:26:23.213 DriverManager:29 - initializing Appium driver
+[Android_Android SDK built for x86 INFO ] 2022-08-17 10:26:23.310 PropertyManager:17 - loading config properties
+[Android_Android SDK built for x86 INFO ] 2022-08-17 10:26:23.313 CapabilitiesManager:18 - getting capabilities
+[Android_Android SDK built for x86 INFO ] 2022-08-17 10:26:23.325 CapabilitiesManager:35 - appUrl isC:\Users\ram.pudi\appium-cucumberbdd-master\src\test\resources\apps\app-release.apk

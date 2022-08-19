@@ -1,0 +1,6 @@
+[Android_sdk_gphone_x86 INFO ] 2022-08-14 19:19:56.141 DriverManager:29 - initializing Appium driver
+[Android_sdk_gphone_x86 INFO ] 2022-08-14 19:19:56.272 PropertyManager:17 - loading config properties
+[Android_sdk_gphone_x86 INFO ] 2022-08-14 19:19:56.275 CapabilitiesManager:18 - getting capabilities
+[Android_sdk_gphone_x86 INFO ] 2022-08-14 19:20:12.757 DriverManager:41 - Driver is initialized
+[Android_sdk_gphone_x86 INFO ] 2022-08-14 19:20:30.998 BasePage:75 - login with ram.pudi@eocharging.com
+[Android_sdk_gphone_x86 INFO ] 2022-08-14 19:20:38.276 BasePage:75 - password is Password1!

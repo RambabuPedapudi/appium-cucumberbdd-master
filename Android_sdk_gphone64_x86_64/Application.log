@@ -1,0 +1,11 @@
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:41:58.454 ServerManager:20 - starting appium server
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:42:00.207 ServerManager:29 - Appium server started
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:42:00.224 PropertyManager:17 - loading config properties
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:42:00.225 DriverManager:30 - initializing Appium driver
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:42:00.239 CapabilitiesManager:18 - getting capabilities
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:42:00.246 CapabilitiesManager:35 - appUrl isC:\Users\ram.pudi\appium-cucumberbdd-master\src\test\resources\apps\app-release.apk
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:42:07.221 DriverManager:44 - Driver is initialized
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:42:16.112 BasePage:75 - login with ram.pudi@eocharging.com
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:42:23.330 BasePage:75 - password is Password1!
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:42:26.786 BasePage:58 - press app login button
+[Android_sdk_gphone64_x86_64 INFO ] 2022-08-18 22:42:54.054 BasePage:101 - Charging mode:

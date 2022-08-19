@@ -1,0 +1,4 @@
+[Android_Emuleter4 10 INFO ] 2022-08-15 21:10:05.207 DriverManager:29 - initializing Appium driver
+[Android_Emuleter4 10 INFO ] 2022-08-15 21:10:05.249 PropertyManager:17 - loading config properties
+[Android_Emuleter4 10 INFO ] 2022-08-15 21:10:05.250 CapabilitiesManager:18 - getting capabilities
+[Android_Emuleter4 10 INFO ] 2022-08-15 21:10:05.257 CapabilitiesManager:35 - appUrl isC:\Users\ram.pudi\appium-cucumberbdd-master\src\test\resources\apps\app-release.apk
