@@ -1,17 +1,7 @@
 package com.qa.runners;
 
-import com.qa.utils.DriverManager;
-import com.qa.utils.GlobalParams;
-import com.qa.utils.ServerManager;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import org.apache.logging.log4j.ThreadContext;
-
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
@@ -21,7 +11,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
         plugin = {"pretty"
                 , "html:target/cucumber/cucumber.html"
                 , "summary"
-                , "me.jvt.cucumber.report.PrettyReports:target/RamRealMobile/cucumber-html-reports"}
+                , "me.jvt.cucumber.report.PrettyReports:target/TestResutls/cucumber-html-reports"}
         , features = {"src/test/resources"}
         , glue = {"com/qa/stepdef"}
         , snippets = CAMELCASE

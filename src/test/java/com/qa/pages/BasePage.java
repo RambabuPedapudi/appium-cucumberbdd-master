@@ -5,7 +5,6 @@ import com.qa.utils.GlobalParams;
 import com.qa.utils.TestUtils;
 import io.appium.java_client.*;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -20,8 +19,6 @@ import java.util.HashMap;
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
 import static java.time.Duration.ofMillis;
-
-import io.appium.java_client.MobileElement;
 
 public class BasePage {
     private final AppiumDriver driver;
@@ -262,16 +259,6 @@ public class BasePage {
         t.press(point(startX, startY)).waitAction(waitOptions(ofMillis(millis))).moveTo(point(endX, endY)).release()
                 .perform();
     }
-//    public  class AndInteractWithKeyboard {
-//        ((AndroidDriver) driver).pressKey(new KeyEvent().withKey(AndroidKey.C));
-//        driver.getKeyboard().pressKey(Keys.ARROW_DOWN);
-//       ((AndroidDriver) driver).pressKey(new KeyEvent().withKey(AndroidKey.HOME));
-//        ((AndroidDriver) driver).pressKey(new KeyEvent().withKey(AndroidKey.CALENDAR));
-//       ((AndroidDriver) driver).pressKey(new KeyEvent().withKey(AndroidKey.B));
-//        Thread.sleep(3000);
-//        driver.getKeyboard().pressKey(Keys.HOME);
-//   //     driver.hideKeyboard();
-    //}
 
     }
 

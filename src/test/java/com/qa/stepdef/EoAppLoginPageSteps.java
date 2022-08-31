@@ -1,14 +1,8 @@
 package com.qa.stepdef;
 
-import com.qa.pages.EOAppHomepage;
 import com.qa.pages.EOAppLoginPage;
-import com.qa.pages.LoginPage;
-import com.qa.pages.ProductsPage;
 
 
-import com.qa.utils.DriverManager;
-import com.qa.utils.GlobalParams;
-import com.qa.utils.ServerManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -19,41 +13,18 @@ import org.junit.Assert;
 
 public class EoAppLoginPageSteps {
 
+     EOAppLoginPage loginpage = new EOAppLoginPage();
 
-//    @Before
-//    public static void initialize() throws Exception {
-//        GlobalParams params = new GlobalParams();
-//        params.initializeGlobalParams();
-//
-//        ThreadContext.put("ROUTINGKEY", params.getPlatformName() + "_"
-//                + params.getDeviceName());
-//
-//        new ServerManager().startServer();
-//        new DriverManager().initializeDriver();
-//    }
-//
-//    @After
-//    public static void quit() {
-//        DriverManager driverManager = new DriverManager();
-//        if (driverManager.getDriver() != null) {
-//            driverManager.getDriver().quit();
-//            driverManager.setDriver(null);
-//        }
-//        ServerManager serverManager = new ServerManager();
-//        if (serverManager.getServer() != null) {
-//            serverManager.getServer().stop();
-//        }
-    //}
     @When("I have to click the start button on EO app")
     public void i_have_to_click_the_start_button_on_eo_app() throws InterruptedException {
-        new EOAppLoginPage().GetstartBatton();
+        loginpage.GetstartBatton();
         //driver.findElementByXPath("//android.widget.Button[@content-desc=\"Get started\"]").click();
     }
 
     @And("I enter userValidEmail {string}")
     public void i_enter_user_valid_email(String userEmail) throws InterruptedException {
 
-        new EOAppLoginPage().enterUserEmail(userEmail);
+        loginpage.enterUserEmail(userEmail);
 
     }
 
@@ -67,7 +38,7 @@ public class EoAppLoginPageSteps {
 
     @And("I enter ValidEmailPassword as {string}")
     public void i_enter_valid_email_password_as(String EmailPassword) throws InterruptedException {
-        new EOAppLoginPage().EmailPasswordTxtFld(EmailPassword);
+        loginpage.EmailPasswordTxtFld(EmailPassword);
     }
 
 //    @And("I click the nextbtn for login get {string}")

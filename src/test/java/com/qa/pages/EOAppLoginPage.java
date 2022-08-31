@@ -2,9 +2,7 @@ package com.qa.pages;
 
 
 import com.qa.utils.TestUtils;
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
@@ -62,6 +60,10 @@ public class EOAppLoginPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\\\"EO App\\")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Error message\"]/child::XCUIElementTypeStaticText")
     private MobileElement EoAppBtn;
+
+    public EOAppLoginPage() {
+    }
+
     public String getTitle() {
         return getText(userEmailTxtFld, "userEmailTxtFld is: ");
     }
