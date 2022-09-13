@@ -23,7 +23,7 @@ public class ServerManager {
             utils.log().fatal("Appium server not started. ABORT!!!");
             throw new AppiumServerHasNotBeenStartedLocallyException("Appium server not started. ABORT!!!");
         }
-        //server.clearOutPutStreams();
+        server.clearOutPutStreams();
         ServerManager.server.set(server);
         utils.log().info("Appium server started");
     }

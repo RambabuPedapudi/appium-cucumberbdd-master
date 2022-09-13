@@ -14,7 +14,9 @@ public class EOAppLoginPage extends BasePage {
     @iOSXCUITFindBy(id = "test-Username")
     private MobileElement userEmailTxtFld;
 
-
+    @AndroidFindBy(className = "android.widget.EditText")
+    @iOSXCUITFindBy(id = "test-Username")
+    private MobileElement ChargerSerialNumber;
     @AndroidFindBy(accessibility = "Get started")
     @iOSXCUITFindBy(id = "Get started")
      private MobileElement GetStartBtn;
@@ -48,7 +50,13 @@ public class EOAppLoginPage extends BasePage {
     @AndroidFindBy(className = "android.widget.Button")
     @iOSXCUITFindBy(id = "test-LOGIN")
     private MobileElement nextBtnForHome;
+    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Home Connect your EO home charge point to the EO app\"]")
+    @iOSXCUITFindBy(id = "test-LOGIN")
+    private MobileElement WelcomeHomeBtn;
 
+    @AndroidFindBy(accessibility = "Enter the serial number manually")
+    @iOSXCUITFindBy(id = "test-LOGIN")
+    private MobileElement MnSerialNumBtn;
     @AndroidFindBy(xpath = "(//android.widget.Button[@index='2'])[2]")
     @iOSXCUITFindBy(id = "test-LOGIN")
     private MobileElement nextBtnForlog;
@@ -56,6 +64,9 @@ public class EOAppLoginPage extends BasePage {
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Charging mode:\"]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Error message\"]/child::XCUIElementTypeStaticText")
     private MobileElement EoAppTitleText;
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Welcome to EO\"]")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Error message\"]/child::XCUIElementTypeStaticText")
+    private MobileElement EoAppWelcomeTitle;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\\\"EO App\\")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Error message\"]/child::XCUIElementTypeStaticText")
@@ -68,11 +79,21 @@ public class EOAppLoginPage extends BasePage {
         return getText(userEmailTxtFld, "userEmailTxtFld is: ");
     }
 
-    public void NextBtnForHome() throws InterruptedException {
-       waitForVisibility(nextBtnForHome);
+    public void MnSerialNumBtn() throws InterruptedException {
+       waitForVisibility(MnSerialNumBtn);
         Thread.sleep(3000);
-       click(nextBtnForHome);
+       click(MnSerialNumBtn);
            }
+    public void WelcomeHomeBtn() throws InterruptedException {
+        waitForVisibility(WelcomeHomeBtn);
+        Thread.sleep(3000);
+        click(WelcomeHomeBtn);
+    }
+    public void NextBtnForHome() throws InterruptedException {
+        waitForVisibility(nextBtnForHome);
+        Thread.sleep(3000);
+        click(nextBtnForHome);
+    }
     public void TermsConditions() throws InterruptedException {
         waitForVisibility(TermsConditions);
         click(TermsConditions);
@@ -117,6 +138,19 @@ public class EOAppLoginPage extends BasePage {
         return this;
     }
 
+    public EOAppLoginPage enterInUserEmail(String InvalidUserEmail) throws InterruptedException {
+        //new EOAppLoginPage().getTitle();
+        //click(EoAppBtn);
+        //waitForVisibility(userEmailTxtFld);
+        Thread.sleep(3000);
+        click(userEmailTxtFld);
+        //waitForVisibility(userEmailTxtFld);
+        Thread.sleep(3000);
+        sendKeys(userEmailTxtFld, InvalidUserEmail, "login with " + InvalidUserEmail);
+        //driver.findElementByClassName("android.widget.EditText").click();
+        return this;
+    }
+
 
     public EOAppLoginPage EmailPasswordTxtFld(String password) throws InterruptedException {
 
@@ -147,6 +181,17 @@ public class EOAppLoginPage extends BasePage {
         String EoAppTitle = getText(EoAppTitleText, "Charging mode:");
         return EoAppTitle;
     }
+
+    public String getEoAppWelcomeTitleText() throws InterruptedException {
+        Thread.sleep(3000);
+        click(AppLogInBtn, "press app login button");
+        Thread.sleep(4000);
+        System.out.println(EoAppTitleText);
+
+        String EoAppTitle = getText(EoAppWelcomeTitle, "Welcome to EO");
+        return EoAppTitle;
+    }
+
 
 
 }
