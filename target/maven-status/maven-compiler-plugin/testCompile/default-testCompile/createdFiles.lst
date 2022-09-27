@@ -1,0 +1,8 @@
+com\qa\pages\BasePage.class
+com\qa\pages\BasePage$2.class
+com\qa\pages\EOAppLoginPage.class
+com\qa\stepdef\Hooks.class
+com\qa\pages\BasePage$1.class
+com\qa\pages\EOAppHomepage.class
+com\qa\runners\MyRunnerTest.class
+com\qa\stepdef\EoAppLoginPageSteps.class

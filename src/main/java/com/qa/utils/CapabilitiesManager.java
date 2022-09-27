@@ -31,10 +31,10 @@ public class CapabilitiesManager {
                     caps.setCapability("chromeDriverPort", params.getChromeDriverPort());
                     caps.setCapability("autoGrantPermissions", "true");
                     //String androidAppUrl = getClass().getResource(props.getProperty("androidAppLocation")).getFile();
-                    String androidAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "test"
-                            + File.separator + "resources" + File.separator + "apps" + File.separator + "app-release.apk";
-                    utils.log().info("appUrl is" + androidAppUrl);
-                    caps.setCapability("app", androidAppUrl);
+                    //String androidAppUrl = System.getProperty("user.dir") + File.separator + "src" + File.separator + "test"
+                           // + File.separator + "resources" + File.separator + "apps" + File.separator + "app-release.apk";
+                    //utils.log().info("appUrl is" + androidAppUrl);
+                    //caps.setCapability("app", androidAppUrl);
                     break;
                 case "iOS":
                     caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, props.getProperty("iOSAutomationName"));

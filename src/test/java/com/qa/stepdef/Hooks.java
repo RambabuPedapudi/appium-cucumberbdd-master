@@ -4,15 +4,10 @@ import com.qa.utils.DriverManager;
 import com.qa.utils.GlobalParams;
 import com.qa.utils.ServerManager;
 import com.qa.utils.VideoManager;
-
-
 import io.cucumber.java.After;
-
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.cucumber.plugin.event.Node;
 import org.apache.logging.log4j.ThreadContext;
-
 import org.openqa.selenium.OutputType;
 
 import java.io.IOException;
@@ -28,7 +23,7 @@ public class Hooks {
         ThreadContext.put("ROUTINGKEY", params.getPlatformName() + "_"
                 + params.getDeviceName());
 
-        new ServerManager().startServer();
+        //new ServerManager().startServer();
         new DriverManager().initializeDriver();
         new VideoManager().startRecording();
     }

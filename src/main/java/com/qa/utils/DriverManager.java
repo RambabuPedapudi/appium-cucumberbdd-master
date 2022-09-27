@@ -5,7 +5,6 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.Properties;
 
 public class DriverManager {
@@ -30,7 +29,7 @@ public class DriverManager {
                 utils.log().info("initializing Appium driver");
                 switch (params.getPlatformName()) {
                     case "Android":
-                        driver = new AndroidDriver(new ServerManager().getServer().getUrl(), new CapabilitiesManager().getCaps());
+                        driver = new AndroidDriver(new CapabilitiesManager().getCaps());
                         //driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), new CapabilitiesManager().getCaps());
                         break;
 

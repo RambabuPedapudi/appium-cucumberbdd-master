@@ -1,7 +1,6 @@
 package com.qa.pages;
 
 import com.qa.utils.DriverManager;
-import com.qa.utils.GlobalParams;
 import com.qa.utils.TestUtils;
 import io.appium.java_client.*;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -83,7 +82,7 @@ public class BasePage {
         return driver.findElement(e).getAttribute(attribute);
     }
 
-    public String getText(MobileElement e, String msg) {
+  /*  public String getText(MobileElement e, String msg) {
         String txt;
         switch (new GlobalParams().getPlatformName()) {
             case "Android":
@@ -98,8 +97,8 @@ public class BasePage {
         utils.log().info(msg + txt);
         return txt;
     }
-
-    public String getText(By e, String msg) {
+*/
+  /*  public String getText(MobileElement e, String msg) {
         String txt;
         switch (new GlobalParams().getPlatformName()) {
             case "Android":
@@ -113,7 +112,7 @@ public class BasePage {
         }
         utils.log().info(msg + txt);
         return txt;
-    }
+    }*/
 
     public void closeApp() {
         driver.closeApp();

@@ -39,14 +39,6 @@ public class ServerManager {
                 .withArgument(GeneralServerFlag.SESSION_OVERRIDE)
                 .withLogFile(new File(params.getPlatformName() + "_"
                         + params.getDeviceName() + File.separator + "Server.log")));
-                //.usingDriverExecutable(new File("C:\\Program Files\\nodejs\\node.exe"))
-                //System.getProperty("user.home")
-                        //.withAppiumJS(new File("C:\\Users\\ram.pudi\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-                //.withAppiumJS(new File("C:\\Users\\ram.pudi\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-//                .usingAnyFreePort()
-//                .withArgument(GeneralServerFlag.SESSION_OVERRIDE));
-                 //.withLogFile(new File(params.getPlatformName() + "_"
-                       // + params.getDeviceName() + File.separator + "Server.log")));
     }
 
 //    public AppiumDriverLocalService MacGetAppiumService() {

@@ -9,23 +9,31 @@ import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class EOAppLoginPage extends BasePage {
     TestUtils utils = new TestUtils();
-    
+
     @AndroidFindBy(className = "android.widget.EditText")
     @iOSXCUITFindBy(id = "test-Username")
     private MobileElement userEmailTxtFld;
 
     @AndroidFindBy(className = "android.widget.EditText")
     @iOSXCUITFindBy(id = "test-Username")
+    private MobileElement usernNewEmailTxtFld;
+
+    @AndroidFindBy(className = "android.widget.EditText")
+    @iOSXCUITFindBy(id = "test-Username")
     private MobileElement ChargerSerialNumber;
     @AndroidFindBy(accessibility = "Get started")
     @iOSXCUITFindBy(id = "Get started")
-     private MobileElement GetStartBtn;
+    private MobileElement GetStartBtn;
 //       driver.findElementByXPath("//android.widget.Button[@content-desc=\"Get started\"]").click();
 //     }
 
     @AndroidFindBy(className = "android.widget.EditText")
     @iOSXCUITFindBy(id = "test-Password")
     private MobileElement EmailPasswordTxtFld;
+
+    @AndroidFindBy(className = "android.widget.EditText")
+    @iOSXCUITFindBy(id = "test-Password")
+    private MobileElement UserNewPasswordTxtFld;
 
     @AndroidFindBy(accessibility = "CLOSE")
     @iOSXCUITFindBy(id = "test-Password")
@@ -61,9 +69,22 @@ public class EOAppLoginPage extends BasePage {
     @iOSXCUITFindBy(id = "test-LOGIN")
     private MobileElement nextBtnForlog;
 
-    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Charging mode:\"]")
+    @AndroidFindBy(xpath = "(//android.widget.ImageView[@index='2'])")
+    @iOSXCUITFindBy(id = "test-LOGIN")
+    private MobileElement logOutBtn;
+
+    @AndroidFindBy(accessibility = "Charging mode:")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Error message\"]/child::XCUIElementTypeStaticText")
     private MobileElement EoAppTitleText;
+
+    @AndroidFindBy(accessibility = "Charging mode:")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Error message\"]/child::XCUIElementTypeStaticText")
+    private MobileElement EoErrorMessageText;
+
+    @AndroidFindBy(accessibility = "Log out")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Error message\"]/child::XCUIElementTypeStaticText")
+    private MobileElement EoAppLogOutTitleText;
+
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Welcome to EO\"]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Error message\"]/child::XCUIElementTypeStaticText")
     private MobileElement EoAppWelcomeTitle;
@@ -71,29 +92,35 @@ public class EOAppLoginPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.TextView[@content-desc=\\\"EO App\\")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"test-Error message\"]/child::XCUIElementTypeStaticText")
     private MobileElement EoAppBtn;
+    @AndroidFindBy(xpath = "//android.view.EditText[@index='2']")
+    @iOSXCUITFindBy(id = "test-Password")
+    private MobileElement CofEmailPasswordTxtFld;
 
     public EOAppLoginPage() {
     }
 
-    public String getTitle() {
-        return getText(userEmailTxtFld, "userEmailTxtFld is: ");
-    }
+//    public String getTitle() {
+//        return getText(userEmailTxtFld, "userEmailTxtFld is: ");
+//    }
 
     public void MnSerialNumBtn() throws InterruptedException {
-       waitForVisibility(MnSerialNumBtn);
+        waitForVisibility(MnSerialNumBtn);
         Thread.sleep(3000);
-       click(MnSerialNumBtn);
-           }
+        click(MnSerialNumBtn);
+    }
+
     public void WelcomeHomeBtn() throws InterruptedException {
         waitForVisibility(WelcomeHomeBtn);
         Thread.sleep(3000);
         click(WelcomeHomeBtn);
     }
+
     public void NextBtnForHome() throws InterruptedException {
         waitForVisibility(nextBtnForHome);
         Thread.sleep(3000);
         click(nextBtnForHome);
     }
+
     public void TermsConditions() throws InterruptedException {
         waitForVisibility(TermsConditions);
         click(TermsConditions);
@@ -104,12 +131,14 @@ public class EOAppLoginPage extends BasePage {
         Thread.sleep(3000);
         click(EoPopClose);
     }
+
     public void EoPolicybtn() throws InterruptedException {
         Thread.sleep(3000);
         click(nextBtnForlog);
         waitForVisibility(EoPolicybtn);
         click(EoPolicybtn);
     }
+
     public void GetstartBatton() throws InterruptedException {
         //waitForVisibility(GetStartBtn);
         click(GetStartBtn);
@@ -137,6 +166,16 @@ public class EOAppLoginPage extends BasePage {
         //driver.findElementByClassName("android.widget.EditText").click();
         return this;
     }
+    public EOAppLoginPage userEnterNewEmail(String newUserEmail) throws InterruptedException {
+
+        waitForVisibility(usernNewEmailTxtFld);
+        click(usernNewEmailTxtFld);
+        Thread.sleep(3000);
+        sendKeys(usernNewEmailTxtFld, newUserEmail, "login with New email " + newUserEmail);
+        //driver.findElementByClassName("android.widget.EditText").click();
+        return this;
+    }
+
 
     public EOAppLoginPage enterInUserEmail(String InvalidUserEmail) throws InterruptedException {
         //new EOAppLoginPage().getTitle();
@@ -159,38 +198,66 @@ public class EOAppLoginPage extends BasePage {
         click(EmailPasswordTxtFld);
         Thread.sleep(3000);
         sendKeys(EmailPasswordTxtFld, password, "password is " + password);
+        Thread.sleep(3000);
+        click(AppLogInBtn, "press app login button");
 
         return this;
     }
 
+    public EOAppLoginPage userNewPasswordTxtFld(String newpassword) throws InterruptedException {
+
+        click(nextBtnForPas);
+        Thread.sleep(3000);
+        click(UserNewPasswordTxtFld);
+        Thread.sleep(3000);
+        sendKeys(UserNewPasswordTxtFld, newpassword, "password is " + newpassword);
+//        click(CofEmailPasswordTxtFld);
+//        Thread.sleep(30000);
+//        sendKeys(CofEmailPasswordTxtFld, Cfpassword, "conformation password is " + Cfpassword);
+//        Thread.sleep(3000);
+//        click(AppLogInBtn, "press app login button");
+        return this;
+    }
+
+    public EOAppLoginPage CFEmailPasswordTxtFld(String Cfpassword) throws InterruptedException {
+        //waitForVisibility(CofEmailPasswordTxtFld);
+        Thread.sleep(30000);
+        click(CofEmailPasswordTxtFld);
+        Thread.sleep(30000);
+        sendKeys(CofEmailPasswordTxtFld, Cfpassword, "conformation password is " + Cfpassword);
+        Thread.sleep(3000);
+        click(AppLogInBtn, "press app login button");
+
+        return this;
+    }
 
     public EOAppHomepage pressLoginBtn() throws InterruptedException {
         Thread.sleep(3000);
         click(nextBtnForlog);
         Thread.sleep(3000);
         click(AppLogInBtn, "press app login button");
+        Thread.sleep(3000);
         return new EOAppHomepage();
     }
 
-    public String getEoAppHomepageTitleText() throws InterruptedException {
+    public String getEoAppLogoutText() throws InterruptedException {
+        String EoAppTitle = EoAppTitleText.getAttribute("content-desc");
         Thread.sleep(3000);
-        click(AppLogInBtn, "press app login button");
-        Thread.sleep(4000);
-        System.out.println(EoAppTitleText);
-
-        String EoAppTitle = getText(EoAppTitleText, "Charging mode:");
         return EoAppTitle;
     }
+//    public String EoErrorMessageText() throws InterruptedException {
+//        String EoErrorMessage = EoAppTitleText.getAttribute("content-desc");
+//        return EoErrorMessage;
+//    }
+//    public String getEoAppWelcomeTitleText() throws InterruptedException {
+//        Thread.sleep(3000);
+//        click(AppLogInBtn, "press app login button");
+//        Thread.sleep(4000);
+//        System.out.println(EoAppTitleText);
 
-    public String getEoAppWelcomeTitleText() throws InterruptedException {
-        Thread.sleep(3000);
-        click(AppLogInBtn, "press app login button");
-        Thread.sleep(4000);
-        System.out.println(EoAppTitleText);
-
-        String EoAppTitle = getText(EoAppWelcomeTitle, "Welcome to EO");
-        return EoAppTitle;
-    }
+       // String EoAppTitle = getText(EoAppWelcomeTitle, "Welcome to EO");
+       //return EoAppTitle;
+    //}
 
 
 
